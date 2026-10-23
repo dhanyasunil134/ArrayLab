@@ -1,0 +1,644 @@
+
+/* ==========================================
+   ARRAYLAB - COMPLETE STYLESHEET
+   ========================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --blue: #315cf5;
+    --blue-dark: #2345c7;
+    --background: #f4f7fc;
+    --border: #e1e7f0;
+    --text: #19243b;
+    --muted: #758198;
+    --green: #15865b;
+    --red: #d74646;
+    --tree-line: #aab8e8;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+/* Header */
+
+.topbar {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    padding: 16px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--blue);
+    color: #fff;
+    font-size: 24px;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.brand h1 {
+    font-size: 20px;
+}
+
+.brand p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.language-tag,
+.file-tag {
+    color: var(--blue);
+    background: #edf1ff;
+    border-radius: 7px;
+    padding: 7px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Main layout */
+
+.page {
+    width: 100%;
+    max-width: 1350px;
+    margin: auto;
+    padding: 30px 24px;
+}
+
+.welcome {
+    background: linear-gradient(120deg, #fff, #edf2ff);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 30px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.eyebrow {
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.welcome h2 {
+    font-size: clamp(24px, 3vw, 34px);
+    margin-bottom: 8px;
+}
+
+.welcome p:not(.eyebrow) {
+    color: var(--muted);
+    max-width: 650px;
+}
+
+.welcome-icon {
+    font-family: monospace;
+    font-size: 60px;
+    font-weight: bold;
+    color: var(--blue);
+    padding: 15px 25px;
+    background: #fff;
+    border-radius: 16px;
+}
+
+.main-grid,
+.bottom-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin-bottom: 22px;
+}
+
+.panel {
+    min-width: 0;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 22px;
+    box-shadow: 0 5px 20px rgba(31, 50, 90, 0.035);
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.panel-header h2 {
+    font-size: 17px;
+    margin-bottom: 3px;
+}
+
+.panel-header p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* Editor */
+
+.editor-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.editor-toolbar label {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+select {
+    flex: 1;
+    min-width: 0;
+    padding: 9px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--text);
+    font-family: inherit;
+}
+
+.editor-wrap {
+    display: flex;
+    min-height: 235px;
+    background: #101a2d;
+    border: 1px solid #26334b;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.line-numbers {
+    min-width: 42px;
+    padding: 16px 10px;
+    text-align: right;
+    color: #64748b;
+    background: #172238;
+    font: 14px/1.8 Consolas, monospace;
+    white-space: pre-line;
+    user-select: none;
+}
+
+#sourceCode {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    min-height: 235px;
+    padding: 16px;
+    resize: vertical;
+    border: none;
+    outline: none;
+    color: #dbeafe;
+    background: transparent;
+    font: 14px/1.8 Consolas, "Courier New", monospace;
+    tab-size: 4;
+}
+
+.editor-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 9px 0 14px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.editor-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+button {
+    cursor: pointer;
+    border: 0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 650;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    opacity: 0.65;
+    cursor: wait;
+    transform: none;
+}
+
+.primary-btn {
+    color: #fff;
+    background: var(--blue);
+}
+
+.primary-btn:hover {
+    background: var(--blue-dark);
+}
+
+.secondary-btn {
+    color: #34415a;
+    background: #f0f3f9;
+    border: 1px solid var(--border);
+}
+
+.secondary-btn:hover {
+    background: #e5eaf4;
+}
+
+/* Compilation pipeline */
+
+.pipeline {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pipeline-step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: background 0.2s;
+}
+
+.stage-number {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    color: var(--blue);
+    background: #edf1ff;
+    border-radius: 9px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.stage-copy {
+    flex: 1;
+    min-width: 0;
+}
+
+.stage-copy h3 {
+    font-size: 13px;
+}
+
+.stage-copy p {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.stage-status {
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.pipeline-step.done {
+    background: #f0fbf5;
+    border-color: #b8e9d0;
+}
+
+.pipeline-step.done .stage-number {
+    background: #d9f7e7;
+    color: var(--green);
+}
+
+.pipeline-step.failed {
+    background: #fff4f4;
+    border-color: #f2c7c7;
+}
+
+.pipeline-step.failed .stage-number {
+    background: #ffe1e1;
+    color: var(--red);
+}
+
+/* Result */
+
+.result-card {
+    margin-top: 17px;
+    padding: 15px;
+    background: #f7f9fd;
+    border-radius: 10px;
+}
+
+.result-badge {
+    display: inline-block;
+    margin-bottom: 8px;
+    padding: 4px 9px;
+    border-radius: 20px;
+    background: #e9edf5;
+    color: #65718a;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.result-badge.success {
+    background: #d9f7e7;
+    color: var(--green);
+}
+
+.result-badge.error {
+    background: #ffe1e1;
+    color: var(--red);
+}
+
+.result-card p {
+    color: #526078;
+    font-size: 12px;
+}
+
+/* Compiler output */
+
+.output-panel {
+    margin-bottom: 22px;
+}
+
+.output {
+    min-height: 115px;
+    max-height: 300px;
+    overflow: auto;
+    overflow-wrap: anywhere;
+    padding: 16px;
+    border-radius: 10px;
+    background: #101a2d;
+    color: #dbeafe;
+    white-space: pre-wrap;
+    font: 13px/1.7 Consolas, monospace;
+}
+
+/* Symbol table */
+
+.table-scroll {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+th,
+td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background: #f7f9fd;
+    color: #66728a;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.empty-cell {
+    padding: 24px 10px;
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+}
+
+/* ==========================================
+   SYNTAX TREE - HIERARCHICAL TREE STRUCTURE
+   ========================================== */
+
+.syntax-tree {
+    width: 100%;
+    min-width: 0;
+    min-height: 180px;
+    padding: 24px 12px;
+    overflow: auto;
+    text-align: center;
+}
+
+/* Tree node container */
+
+.tree-node {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    min-width: max-content;
+    padding: 0 7px;
+}
+
+/* All node boxes */
+
+.tree-box {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 9px 13px;
+    margin: 0;
+    border: 1px solid #cbd5ff;
+    border-radius: 8px;
+    background: #edf1ff;
+    color: #2948b8;
+    font-size: 12px;
+    font-weight: 650;
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+/* Program root */
+
+.tree-root {
+    background: var(--blue);
+    color: #fff;
+    border-color: var(--blue);
+}
+
+/* Children of any node */
+
+.tree-children {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    padding-top: 30px;
+}
+
+/* Horizontal line connecting sibling nodes */
+
+.tree-children::before {
+    content: "";
+    position: absolute;
+    top: 29px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--tree-line);
+}
+
+/* Vertical line from parent down to sibling connector */
+
+.tree-children::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 30px;
+    background: var(--tree-line);
+    transform: translateX(-50%);
+}
+
+/* Each child gets its own vertical connector */
+
+.tree-children > .tree-node::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    width: 2px;
+    height: 31px;
+    background: var(--tree-line);
+    transform: translateX(-50%);
+}
+
+/* Keep nodes above the connector lines */
+
+.tree-children > .tree-node > .tree-box {
+    z-index: 2;
+}
+
+/* Leaf nodes */
+
+.tree-leaf {
+    background: #f4f7fc;
+    color: #35435e;
+    border-color: #dce3ee;
+}
+
+/* Invalid source lines */
+
+.tree-error {
+    background: #fff0f0;
+    color: var(--red);
+    border-color: #f2c7c7;
+}
+
+/* Tree messages */
+
+.tree-message {
+    color: var(--muted);
+    font-size: 12px;
+    padding: 20px;
+}
+
+/* Footer */
+
+footer {
+    padding: 15px;
+    color: var(--muted);
+    font-size: 11px;
+    text-align: center;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 850px) {
+    .main-grid,
+    .bottom-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .page {
+        padding: 20px 14px;
+    }
+
+    .welcome {
+        padding: 22px;
+    }
+
+    .welcome-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .panel {
+        padding: 16px;
+    }
+
+    .syntax-tree {
+        padding: 20px 8px;
+    }
+
+    .tree-children {
+        gap: 10px;
+    }
+
+    .tree-box {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .topbar {
+        padding: 13px 16px;
+    }
+
+    .language-tag {
+        font-size: 9px;
+    }
+
+    .editor-actions button {
+        flex: 1;
+    }
+
+    .pipeline-step {
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .stage-status {
+        font-size: 9px;
+    }
+}
